@@ -1,5 +1,6 @@
 const request = require('request')
 
+
 const forcast = (latitude, longitude, callback) => {
     const url = 'https://api.darksky.net/forecast/8843f4e9a0ee58c41e46d47ccd9ae730/' + latitude + ',' + longitude
 
@@ -17,6 +18,8 @@ const forcast = (latitude, longitude, callback) => {
             callback(undefined, 
                 body.daily.data[0].summary + 
                 ' It is currently ' + body.currently.temperature + 
+                'With low of ' + body.daily.data[0].temperatureLow +
+                ', and high of ' + body.daily.data[0].temperatureHigh + 
                 ' And the chance of rain is ' + body.currently.precipProbability + '%.'
             )
         }
