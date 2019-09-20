@@ -14,7 +14,10 @@ weatherForm.addEventListener('submit', (e) => { // e is an event object
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = '' // empty the second message to clear value from previous search
 
-    const url = "http://localhost:3000/weather?address=" + location
+    // testing code on localhost
+    // const url = "http://localhost:3000/weather?address=" + location
+
+    const url = '/weather?address=' + location
 
     fetch(url).then((response) => {
         response.json().then((data) => {

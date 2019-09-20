@@ -7,6 +7,12 @@ const forcast = require('../src/utils/forcast')
 
 const app = express() // created an express object
 
+// set up a port number
+// port number will be the former, if the former exists
+// otherwise the latter
+// process.env.PORT to get the port number heroku assigned to my application
+const port = process.env.PORT || 3000
+
 // define paths for Express config
 const currentDir = __dirname
 const homePage = path.join(currentDir, '../public')
@@ -111,6 +117,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
