@@ -18,9 +18,9 @@ const forcast = (latitude, longitude, callback) => {
             callback(undefined, 
                 body.daily.data[0].summary + 
                 ' It is currently ' + body.currently.temperature + 
-                'With low of ' + body.daily.data[0].temperatureLow +
+                '; with low of ' + body.daily.data[0].temperatureLow +
                 ', and high of ' + body.daily.data[0].temperatureHigh + 
-                ' And the chance of rain is ' + body.currently.precipProbability + '%.'
+                '. And the chance of rain is ' + body.currently.precipProbability + '%.'
             )
         }
     })
